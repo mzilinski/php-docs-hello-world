@@ -29,18 +29,8 @@ $bnr = $_GET["bnr"];
 echo "<h1>iBrot-Bestellung</h1>";  
 echo "<h2>Bestellnummer: $bnr </h2>";  
 
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:mzi-ibrot-dbsrv.database.windows.net,1433; Database = ibrot", "mzili", "oCsB84ksRyM8eg");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "mzili", "pwd" => "{your_password_here}", "Database" => "ibrot", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "mzili", "pwd" => "oCsB84ksRyM8eg", "Database" => "ibrot", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:mzi-ibrot-dbsrv.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
