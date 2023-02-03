@@ -43,7 +43,7 @@ catch (PDOException $e) {
 $connectionInfo = array("UID" => "mzili", "pwd" => "{your_password_here}", "Database" => "ibrot", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:mzi-ibrot-dbsrv.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-?>
+
 
 /* Set up and execute the query. */   
 $tsql = "SELECT * FROM Bestellposition WHERE BestellungID=$bnr";
